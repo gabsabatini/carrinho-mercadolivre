@@ -1,18 +1,25 @@
 'use client';
 
 import fetchProducts from "@/api/fetchProducts";
-import React, { useState } from "react";
+import Context, { ContextType } from "@/context/context";
+import React, { useContext } from "react";
+import { useState } from "react";
 import {BsSearch} from 'react-icons/Bs';
 
 const SearchBar = () => {
 
+    const context = useContext(Context);
+
+    const { setProducts, setLoading } = context as ContextType;
     const [searchValue, setSearchValue] = useState('');
 
     const handleForm = async (e:any) => {
         e.preventDefault();
+        setLoading(true);
 
         const products = await fetchProducts(searchValue);
-        console.log(products);
+        setProducts(products);
+        setLoading(false);
         setSearchValue('');
     }
 
