@@ -12,7 +12,7 @@ const Products = () => {
     const { products, setProducts, loading, setLoading } = context as ContextType; // Use 'as' para indicar o tipo
 
     useEffect(() => {
-        fetchProducts('motorola').then((response: any) => {
+        fetchProducts('macbook').then((response: any) => {
             setProducts(response);
             setLoading(false);
         });
