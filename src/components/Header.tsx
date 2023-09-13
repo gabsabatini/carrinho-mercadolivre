@@ -5,17 +5,12 @@ import Cart from "./Cart";
 const Header = () => {
 
     return (
-    
         <header>
             <div className="container">
- 
                 <SearchBar/>
                 <Cart/>
-
             </div>
-
         </header>
-
     );
 
 }

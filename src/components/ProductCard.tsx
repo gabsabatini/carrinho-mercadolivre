@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BsFillCartPlusFill } from 'react-icons/Bs';
 import { ProductData } from "@/types/types";
 import formatCurrency from "@/utils/formatCurrency";
+import Context, { ContextType } from "@/context/Context";
 
 const ProductCard = ({ data }: { data: ProductData }) => {
     const { title, thumbnail, price } = data;
     const free_shipping = data.shipping.free_shipping;
     const { amount, quantity } = data.installments;
+
+    const context = useContext(Context);
+    const { cartItems, setCartItems } = context as ContextType;
+
+    const handleAddCart = () => {
+        setCartItems([ ...cartItems, data ]);
+    }
 
     return (
         <div className="product-card">
@@ -22,7 +30,7 @@ const ProductCard = ({ data }: { data: ProductData }) => {
                 {free_shipping ? (<p className="frete-gratis">Frete grátis</p>) : ('')}
             </div>
 
-            <button type="button" className="cart-add">
+            <button type="button" className="cart-add" onClick={handleAddCart}>
                 <BsFillCartPlusFill />
             </button>
         </div>

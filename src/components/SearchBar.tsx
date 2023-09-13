@@ -1,7 +1,7 @@
 'use client';
 
 import fetchProducts from "@/api/fetchProducts";
-import Context, { ContextType } from "@/context/context";
+import Context, { ContextType } from "@/context/Context";
 import React, { useContext } from "react";
 import { useState } from "react";
 import {BsSearch} from 'react-icons/Bs';
@@ -9,8 +9,8 @@ import {BsSearch} from 'react-icons/Bs';
 const SearchBar = () => {
 
     const context = useContext(Context);
-
     const { setProducts, setLoading } = context as ContextType;
+
     const [searchValue, setSearchValue] = useState('');
 
     const handleForm = async (e:any) => {

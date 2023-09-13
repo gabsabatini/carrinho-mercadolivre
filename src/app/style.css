@@ -6,9 +6,12 @@
     box-sizing: border-box;
     font-family: 'Montserrat';
 }
-
 body { 
     background: #ebebeb;
+}
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
 }
 header {
     background: #fff159;
@@ -176,5 +179,106 @@ header .container .cart button span.cart-cont {
     }
     to {
         transform: rotate(360deg);
+    }
+}
+.cart-lateral {
+    width: 100%;
+    max-width: 330px;
+    background: #fff;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 100px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transform: translate(110%, 0);
+    transition: all 400ms ease;
+    box-shadow: 12px 1px 9px 8px;
+}
+.cart-active {
+    transform: translate(0, 0);
+}
+.cart-item {
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+.cart-item img {
+    width: 70px;
+}
+.cart-item-title {
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 400;
+    height: 2.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 10px;
+    color: #333;
+}
+.cart-item-price {
+    font-size: 24px;
+    color: #333;
+    font-weight: 400;
+}
+.cart-item-infos {
+    padding: 0 35px 0 10px;
+}
+.cart-item .remove-item {
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+    color: #333;
+    font-size: 1.2rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+.cart-items {
+    flex-grow: 1;
+    overflow: auto;
+}
+.cart-resumo {
+    font-size: 25px;
+    font-weight: 500;
+    padding: 25px 0 15px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+.cart-items .cart-item:last-child {
+    border-bottom: none;
+}
+.cart-empty {
+    font-size: 20px;
+    color: #333;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+.cart-empty .icon-sad {
+    font-size: 35px;
+}
+
+@media (max-width: 760px) {
+    .products {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+    .product-card {
+        max-width: initial;
+    }
+    .cart-add {
+        display: flex;
     }
 }
