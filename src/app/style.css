@@ -83,7 +83,7 @@ header .container .cart button span.cart-cont {
     justify-content: center;
 }
 .products {
-    padding: 120px 20px 50px;
+    padding: 120px 0 50px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(225px, 1fr)); /* auto preencher as colunas com no minimo 200px e no max a largura total da tela */
     gap: 20px;

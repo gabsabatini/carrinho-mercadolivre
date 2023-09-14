@@ -1,6 +1,6 @@
 export const metadata = {
   title: 'Carrinho Compras',
-  description: 'Um clone do carrinho de compras do Mercado Livre',
+  description: 'Carrinho de compras com busca de produtos do Mercado Livre',
 }
 
 import './style.css';

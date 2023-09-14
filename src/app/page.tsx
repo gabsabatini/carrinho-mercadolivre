@@ -5,6 +5,9 @@ import Provider from "@/context/Provider";
 import React from "react";
 
 export default function Home() {
+
+  //Componentes dentro do Provider podem compartilhar states entre si
+
   return (
     <>
       <Provider>
@@ -14,5 +17,4 @@ export default function Home() {
       </Provider>
     </>
   );
-
 }

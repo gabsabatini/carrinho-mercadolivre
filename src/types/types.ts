@@ -4,10 +4,10 @@ export interface ProductData {
   thumbnail: string;
   price: number;
   shipping: {
-    free_shipping: boolean;
+    free_shipping?: boolean; // o ? torna a propriedade opcional
   };
-  installments: {
-    amount: number;
-    quantity: number;
+  installments?: {
+    amount?: number;
+    quantity?: number;
   }
 }
